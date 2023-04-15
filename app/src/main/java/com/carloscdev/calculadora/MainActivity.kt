@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+    // Obtiene el valor del botón y concatena
     fun getValue(view: View) {
         var button = view as Button
         var textButton = button.text.toString()
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         printResponse()
     }
 
+    // Obtiene la operación seleccionada y concatena
     fun getOperation(view: View) {
         var button = view as Button
         var currentIdOperation = button.getId()
@@ -63,10 +65,12 @@ class MainActivity : AppCompatActivity() {
         printResponse()
     }
 
+    // Función que concatena el response para mostrar en pantalla
     fun printResponse() {
         responseText?.text = firstNumber + currentOperation + secondNumber
     }
 
+    // Restaura  todos los valores a su estado inicial
     fun resetAll(view: View) {
         responseText?.text = "0"
         selectOperation = false
@@ -75,6 +79,7 @@ class MainActivity : AppCompatActivity() {
         currentOperation = ""
     }
 
+    // Valida que no se ingresen ceros a la izquierda
     fun validateCero(str: String): String {
         var i = 0
         while(i < str.length && str[i] == '0') i++

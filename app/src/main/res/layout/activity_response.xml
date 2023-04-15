@@ -38,7 +38,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:gravity="center"
-            android:text="El resultado de la operación es:"
+            android:text="@string/response"
             android:textColor="#FFFFFF"
             android:textSize="24dp" />
 
@@ -52,12 +52,21 @@
             android:textSize="24dp" />
 
         <Button
-            android:id="@+id/button_return"
+            android:id="@+id/button_share"
             android:layout_width="209dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:backgroundTint="#22252D"
-            android:text="Regresar"
+            android:text="@string/share"
+            android:textColor="#BF686B"
+            app:cornerRadius="10dp" />
+
+        <Button
+            android:id="@+id/button_return"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#22252D"
+            android:text="@string/go_home"
             android:textColor="#009688"
             app:cornerRadius="10dp" />
 

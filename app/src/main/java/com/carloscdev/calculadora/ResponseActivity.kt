@@ -18,6 +18,9 @@ class ResponseActivity : AppCompatActivity() {
         operationText = findViewById(R.id.operation)
         responseText = findViewById(R.id.response)
 
+        val buttonShare = findViewById<Button>(R.id.button_share)
+        buttonShare.setOnClickListener { shareResponse() }
+
         val firstNumber = intent.getStringExtra("firstNumber")
         val secondNumber = intent.getStringExtra("secondNumber")
         val currentOperation = intent.getStringExtra("currentOperation")
@@ -34,6 +37,22 @@ class ResponseActivity : AppCompatActivity() {
         }
     }
 
+
+
+    // Función que comparte el resultado
+    private fun shareResponse() {
+        println("$operationText = $responseText")
+        val intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, "${operationText?.text} = ${responseText?.text}")
+            type = "text/plain"
+            putExtra(Intent.EXTRA_TITLE, "CALCULADORA VIU")
+        }
+        val shareIntent = Intent.createChooser(intent, null)
+        startActivity(shareIntent)
+    }
+
+    // Realiza la operación aritmética en base al operador que se elige
     fun calculate(a: Int, b: Int, operator: String): Number {
         return when (operator) {
             "+" -> a + b

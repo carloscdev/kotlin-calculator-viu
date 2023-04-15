@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Calculadora</string>
+    <string name="response">El resultado de la operación es:</string>
+    <string name="go_home">Ir a inicio</string>
+    <string name="share">Compartir resultados:</string>
+</resources>
